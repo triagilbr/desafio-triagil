@@ -2,7 +2,7 @@
 
 Olá! Nesse repositório você vai encontrar as instruções necessárias pra participar do desafio Triágil. O objetivo aqui é testar os seus conhecimentos de programação (e de Google), valendo uma vaga de estágio na equipe de Infraestrutura da Triágil.
 
-O desafio é o seguinte: Você precisa desenvolver uma API na linguagem de programação que se sentir mais confortável (só não me venha com Java), pra montar times de Pokémons, pra isso, você vai usar a [pokeapi.co](https://pokeapi.co/). O usuário que utilizar sua API deve conseguir gerar um novo time, passando como parâmetro uma lista de pokémons e um nome de usuário. Você deve então ler essa lista, buscar pelos pokémons na pokeAPI e caso não encontre nenhum erro, salvar esse time da maneira que preferir (pode ser em memória, banco de dados, arquivo de texto...). Com o time salvo, você retorna ao usuário uma mensagem de validação e uma **id** unica, para identificar aquele time. Além disso, você deve disponibilizar duas rotas para leitura dos dados, uma que busque todos os times registrados e outra que busque um time pela ID unica.
+O desafio é o seguinte: Você precisa desenvolver uma API na linguagem de programação que se sentir mais confortável, pra montar times de Pokémons, pra isso, você vai usar a [pokeapi.co](https://pokeapi.co/). O usuário que utilizar sua API deve conseguir gerar um novo time, passando como parâmetro uma lista de pokémons e um nome de usuário. Você deve então ler essa lista, buscar pelos pokémons na pokeAPI e caso não encontre nenhum erro, salvar esse time da maneira que preferir (pode ser em memória, banco de dados, arquivo de texto...). Com o time salvo, você retorna ao usuário uma mensagem de validação e uma **id** unica, para identificar aquele time. Além disso, você deve disponibilizar duas rotas para leitura dos dados, uma que busque todos os times registrados e outra que busque um time pela ID unica.
 
 Daí com sua API pronta, você só precisa gerar um Dockerfile e um compose! A ideia aqui é que qualquer pessoa com acesso ao seu código, consiga instanciar a sua API e realizar testes (e pode ter certeza que vamos testar).
 
@@ -11,7 +11,7 @@ Daí com sua API pronta, você só precisa gerar um Dockerfile e um compose! A i
 - Rotas
 
   - GET /api/teams - Deverá listar todos os times registrados
-  - GET /api/teams/{id} - Busca um time registrado por ID
+  - GET /api/teams/{user} - Busca um time registrado por usuário
   - POST /api/teams - Rota para criação de um time, que recebe um JSON nesse formato [aqui](#exemplo-input)
 
 * As rotas devem retornar erro quando o input contém algum erro (nome de pokémon inválido, etc...). A mensagem de erro fica a seu critério, desde que esteja claro para o usuário onde está o problema.
@@ -24,7 +24,7 @@ Você será avaliado com base na qualidade do código, na implementação dos re
 
 ### Exemplos
 
-#### Output /api/teams/{id}
+#### Output /api/teams/{user}
 
 ```json
 {
